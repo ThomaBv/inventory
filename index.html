@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Ventas de Cacao</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema de Ventas de Cacao</h1>
+
+        <!-- Buscador -->
+        <div class="search-container">
+            <input type="text" id="buscadorCodigo" placeholder="Buscar por código..." oninput="filtrarRegistros()">
+        </div>
+
+        <!-- Formulario para agregar nuevos registros -->
+        <form id="formularioVenta" class="form-venta">
+            <input type="number" id="codigo" placeholder="Código" required>
+            <select id="estado">
+                <option value="Baba">Cacao en Baba</option>
+                <option value="Seco">Cacao Seco</option>
+            </select>
+            <input type="text" id="comprador" placeholder="Nombre del Comprador" required>
+            <input type="text" id="proveedor" placeholder="Proveedor" required>
+            <input type="number" id="cantidad" placeholder="Cantidad (Quintales/Peso)" step="0.01" required>
+            <input type="number" id="costo" placeholder="Costo (por unidad)" step="0.01" required>
+            <button type="submit">Agregar Registro</button>
+        </form>
+
+        <!-- Tabla para mostrar los registros -->
+        <table id="tablaVentas">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Estado del Cacao</th>
+                    <th>Comprador</th>
+                    <th>Proveedor</th>
+                    <th>Cantidad (Quintales/Peso)</th>
+                    <th>Costo</th>
+                    <th>Total</th>
+                    <th>Editar / Borrar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Los registros se agregarán aquí mediante JavaScript -->
+            </tbody>
+        </table>
+
+        <div id="totalGeneral">
+            <strong>Total General: </strong><span id="totalSumado">0.00</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
